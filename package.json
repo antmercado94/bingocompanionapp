@@ -2,6 +2,7 @@
 	"name": "client",
 	"version": "1.0.0",
 	"description": "",
+	"main": "index.js",
 	"scripts": {
 		"dev": "npx parcel index.html -p 3000 --open",
 		"build": "npx parcel build index.html",
