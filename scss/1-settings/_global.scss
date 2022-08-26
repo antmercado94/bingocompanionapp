@@ -1,0 +1,114 @@
+/**
+* Global CSS Custom Properties
+**/
+
+:root {
+  /** bg */
+  --bg-light: url('/Assets/img/bg--light.png');
+  --bg-dark: url('/Assets/img/bg--dark.png');
+
+  /** colors */
+  --clr-black: #252121;
+  --clr-blue: #0661EB;
+  --clr-brown-light: #AA5E2A;
+  --clr-brown-dark: #512C17;
+  --clr-gray: #9399C9;
+  --clr-green: #8BA949;
+  --clr-indigo-400: #977AB2;
+  --clr-indigo-600: #5F4D71;
+  --clr-red-400: #ED5354;
+  --clr-red-500: #E54344;
+  --clr-red-600: #C13839;
+  --clr-white: #ffffff;
+  
+  --clr-nav: hsla(0, 50%, 24%, 0.17);
+  --clr-grid: #ffffff;
+  --clr-no-grid: #E54344;
+  --clr-toggle: #252121;
+
+  /** font-family */
+  --ff-primary: 'Rubik', sans-serif;
+
+  /** font-weight */
+  --fw-primary-light: 300;
+  --fw-primary-regular: 400;
+  --fw-primary-bold: 700;
+  --fw-primary-black: 900;
+
+  /** font-sizes */
+  --fs-100: 0.563rem;
+  --fs-200: 0.75rem; 
+  --fs-400: 1rem; 
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.75rem; 
+  --fs-800: 2.188rem; 
+  --fs-900: 2.938rem; 
+
+  /** box-shadows */
+  --shadow-300: 0px 4px 4px rgba(37, 33, 33, var(--opacity-500));
+  --shadow-400: 0px 4px 4px rgba(0, 0, 0, var(--opacity-600));
+
+  /** border-radius */
+  --br-100: 0.313rem;
+  --br-200: 0.625rem;
+  --br-300: 0.938rem;
+  --br-400: 1.25rem;
+  --br-500: 1.875rem;
+  --br-600: 2.5rem;
+
+  /** opacity */
+  --opacity-400: 0.5;
+  --opacity-500: 0.3;
+  --opacity-600: 0.25;
+  --opacity-900: 0.05;
+
+  /** spacing */
+  --spacing-xxs: 0.288rem;
+  --spacing-xs: 0.625rem;
+  --spacing-s: 0.75rem;
+  --spacing-1: 1rem;
+  --spacing-2: 1.125rem;
+  --spacing-3: 1.25rem;
+  --spacing-4: 1.563rem;
+  --spacing-5: 1.875rem;
+  --spacing-6: 2.5rem;
+  --spacing-7: 2.813rem;
+  --spacing-8: 3.125rem;
+  --spacing-9: 4.063rem;
+  --spacing-xxl: 6.875rem;
+
+  /** padding */
+  --padding-100: 0.313em;
+  --padding-200: 0.75em;
+  --padding-300: 0.938em;
+  --padding-400: 1em;
+  --padding-500: 1.25em;
+  --padding-600: 1.563em
+  --padding-700: 1.875em;
+  --padding-800: 2.25em;
+  --padding-900: 2.813em;
+  --padding-xl: 4.063em;
+
+  /** transition */
+  --transition-all-1: all 0.1s linear;
+  --transition-all-2: all 0.2s linear;
+  --transition-op-1: opacity 0.2s linear;
+
+  /** temp font size */
+  --res-fs-400: 1.8vw;
+
+  /** light theme*/
+  [data-theme="light"] {
+    --bg: var(--bg-light);
+  }
+  
+  /** dark theme */
+  [data-theme="dark"] {
+    --bg: var(--bg-dark);
+    --clr-nav: hsl(322, 51%, 47%, 45%);
+    --clr-grid: #601F5C;
+    --clr-no-grid: #601F5C;
+    --clr-toggle: #ffffff;
+  }
+}

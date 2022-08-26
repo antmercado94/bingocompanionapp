@@ -1,0 +1,47 @@
+/**
+* Card PDF Generator Component Styles
+**/
+
+.generate-cards {
+	position: fixed;
+	inset-block-end: 2%;
+	inset-inline-end: 2%;
+	inline-size: 3.5rem;
+	block-size: 3.5rem;
+	border-radius: 50%;
+	opacity: var(--opacity-400);
+	// /** animation */
+	// animation: imgLoad 0.2s linear forwards;
+	cursor: pointer;
+	&__icon {
+		inline-size: 2.5rem;
+	}
+	&:hover {
+		opacity: 1;
+		transform: scale(1.1);
+		transition: all 0.2s ease-in;
+	}
+	&--hidden:hover {
+		opacity: var(--opacity-400);
+		transform: unset;
+		transition: unset;
+		cursor: unset;
+	}
+	&--animate {
+		/** animation */
+		animation: imgLoad 0.2s linear;
+	}
+	@media (min-width: 40rem) {
+		inset-block-end: 8%;
+		inset-inline-end: 6%;
+		inline-size: 5rem;
+		block-size: 5rem;
+		&__icon {
+			inline-size: 4rem;
+		}
+	}
+}
+
+.generate-cards[data-disabled='true'] {
+	visibility: hidden;
+}

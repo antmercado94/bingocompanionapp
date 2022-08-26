@@ -1,0 +1,71 @@
+/**
+* Settings Component Styles
+**/
+
+.setting {
+	flex-wrap: wrap;
+	align-items: center;
+	&__name {
+		font-size: 0.563em;
+		flex-basis: 100%;
+		align-items: center;
+	}
+	&__name::before {
+		content: '';
+		display: inline-block;
+		inline-size: 1.5em;
+		block-size: 1.5em;
+		margin-inline-end: 4px;
+		background-repeat: no-repeat;
+		opacity: var(--opacity-400);
+	}
+	&__name--name::before {
+		background-image: url('../Assets/svg/user.svg');
+	}
+	&__name--email::before {
+		background-image: url('../Assets/svg/mail.svg');
+	}
+	&__name--password::before {
+		background-image: url('../Assets/svg/lock.svg');
+	}
+	&__value {
+		inline-size: min(100%, 10rem);
+		font-size: 0.563em;
+		word-wrap: anywhere;
+		margin-inline-end: 0.5rem;
+		&::placeholder {
+			opacity: unset;
+		}
+		&:disabled::placeholder {
+			color: var(--clr-white);
+		}
+		&:disabled {
+			inline-size: 100%;
+			background: none;
+			border: none;
+			color: var(--clr-white);
+		}
+	}
+	&__btn {
+		font-size: 0.4em;
+		padding: 1em 2.2em;
+		text-transform: uppercase;
+		&:disabled {
+			transition: var(--transition-all-2);
+			background-color: var(--clr-indigo-600);
+			color: rgba(255, 255, 255, 0.5);
+			box-shadow: unset;
+		}
+	}
+	&__spacer {
+		justify-content: space-between;
+		flex-basis: 100%;
+		margin-inline-start: 11%;
+		align-items: center;
+	}
+	@media (min-width: 20rem) {
+		&__btn {
+			font-size: 0.458em;
+		}
+	}
+}

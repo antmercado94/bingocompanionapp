@@ -1,0 +1,123 @@
+/**
+* Bingo Grid Component Styles
+**/
+
+.b-grid {
+	font-size: min(2vw, 0.6rem);
+	--grid-line-width: 0.4rem;
+	outline: var(--grid-line-width) solid var(--clr-black);
+	border-radius: var(--br-300);
+	background-color: var(--clr-black);
+	overflow-y: hidden;
+	&__letters {
+		grid-template-columns: repeat(5, 7.5em);
+		gap: var(--grid-line-width);
+		border-block-end: var(--grid-line-width) solid var(--clr-black);
+	}
+	&__letters span:first-of-type {
+		border-radius: var(--br-300) 0 0 0;
+	}
+	&__letters span:last-of-type {
+		border-radius: 0 var(--br-300) 0 0;
+	}
+	&__ltr {
+		text-transform: uppercase;
+		font-size: 4em;
+	}
+	&__numbers {
+		grid-template-columns: repeat(5, 7.5em);
+		grid-template-rows: repeat(5, 7.5em);
+		gap: var(--grid-line-width);
+		/** server error */
+		.game__error {
+			position: absolute;
+			align-self: center;
+			justify-self: center;
+		}
+	}
+	&__nbr {
+		/** animation */
+		animation: contentLoad 0.1s linear forwards;
+		position: relative;
+		background-color: var(--clr-grid);
+		color: var(--clr-toggle);
+		font-size: 3em;
+	}
+	&__nbr > img {
+		padding: 0.1rem;
+		text-transform: capitalize;
+		font-weight: var(--fw-primary-bold);
+		letter-spacing: 0.5px;
+		font-size: 0.75em;
+		opacity: var(--opacity-400);
+	}
+	/** match */
+	&__match::after {
+		content: '';
+		position: absolute;
+		display: inline;
+		min-inline-size: 1.8rem;
+		min-block-size: 1.8rem;
+		inline-size: min(12vw, 2em);
+		block-size: min(12vw, 2em);
+		border-radius: 50%;
+		background-color: var(--clr-red-500);
+		opacity: 0.9;
+		box-shadow: var(--shadow-300);
+	}
+	&__match--animate::after {
+		/** animation */
+		animation: revealMatch 0.6s 0.2s ease-in-out backwards;
+	}
+	/** winning animation */
+	&__winMatch--animate::after {
+		animation: revealMatch 0.6s ease-in-out 0.2s backwards,
+			flash 0.5s ease-in-out 1s 10 alternate backwards;
+	}
+	/* loading */
+	.loading {
+		grid-row: 1/-1;
+		grid-column: 1/-1;
+	}
+}
+
+@media (min-width: 40rem) {
+	.b-grid {
+		font-size: unset;
+		&__letters {
+			grid-template-columns: repeat(5, 1fr);
+		}
+		&__ltr {
+			font-size: min(4vw, 2rem);
+		}
+		&__numbers {
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(5, min(9vw, 4.5em));
+		}
+		&__nbr {
+			font-size: min(3vw, 1.563rem);
+		}
+		/** match */
+		&__match::after {
+			inline-size: min(10vw, 2.5em);
+			block-size: min(10vw, 2.5em);
+		}
+	}
+}
+
+@media (min-width: 60.5rem) {
+	.b-grid {
+		&__numbers {
+			grid-template-rows: repeat(5, min(6.5vw, 4.5em));
+		}
+	}
+}
+
+@media (max-width: 23.125rem) {
+	:root {
+		--res-fs-400: clamp(0.3rem, 2vw, 0.45rem);
+	}
+	.b-grid {
+		font-size: clamp(0.3rem, 2vw, 0.45rem);
+	}
+}

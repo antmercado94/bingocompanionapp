@@ -1,0 +1,26 @@
+/**
+* Form Element Styles
+**/
+
+.input {
+	border: none;
+	border-radius: var(--br-200);
+	padding: 0.5em 1.2em;
+}
+
+.input::placeholder {
+	text-transform: uppercase;
+	font-size: 0.563em;
+}
+
+.input[type='password'],
+.input::placeholder {
+	color: var(--clr-black);
+}
+
+.error,
+.success {
+	text-transform: uppercase;
+	/** animation */
+	animation: contentLoad 0.1s linear forwards;
+}

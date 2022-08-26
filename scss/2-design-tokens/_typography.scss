@@ -1,0 +1,49 @@
+/**
+* Typography Classes
+**/
+
+/* font-family */
+body,
+.ff-primary {
+	font-family: var(--ff-primary);
+}
+
+/* font-weight */
+.fw-light {
+	font-weight: var(--fw-primary-light);
+}
+.fw-regular {
+	font-weight: var(--fw-primary-regular);
+}
+.fw-bold {
+	font-weight: var(--fw-primary-bold);
+}
+.fw-black {
+	font-weight: var(--fw-primary-black);
+}
+
+/* font-size */
+.fs-100 {
+	font-size: var(--fs-100);
+}
+.fs-200 {
+	font-size: var(--fs-200);
+}
+.fs-400 {
+	font-size: var(--fs-400);
+}
+.fs-500 {
+	font-size: var(--fs-500);
+}
+.fs-600 {
+	font-size: var(--fs-600);
+}
+.fs-700 {
+	font-size: var(--fs-700);
+}
+.fs-800 {
+	font-size: var(--fs-800);
+}
+.fs-900 {
+	font-size: var(--fs-900);
+}

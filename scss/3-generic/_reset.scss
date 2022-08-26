@@ -1,0 +1,157 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol,
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* Remove default ul padding */
+ul {
+	padding-left: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	color: var(--clr-black);
+	/** preload bg */
+	background: url('../Assets/img/bg--light.png') no-repeat -9999px -9999px,
+		url('../Assets/img/bg--dark.png') no-repeat -9999px -9999px;
+
+	div#root,
+	div.App {
+		min-height: inherit;
+	}
+	div.App {
+		background-image: var(--bg);
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+/* h5 defaults */
+h5 {
+	font-size: var(--fs-200);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* A element */
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+/* Button element */
+button {
+	border: none;
+	cursor: pointer;
+	&:disabled {
+		cursor: unset;
+	}
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.reset-sb {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, var(--opacity-600)) transparent;
+
+	/* Chrome, Edge, and Safari */
+	::-webkit-scrollbar {
+		width: 12px;
+	}
+	::-webkit-scrollbar-track {
+		background: transparent;
+		margin-block: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: rgba(255, 255, 255, var(--opacity-600));
+		border-radius: 10px;
+		border: 3px solid transparent;
+		height: 35px;
+	}
+}
+
+/* stop text select highlighting */
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* min-width */
+@media (max-width: 23.125rem) {
+	body {
+		min-width: 17.5rem;
+	}
+}

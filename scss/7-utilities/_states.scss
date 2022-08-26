@@ -1,0 +1,52 @@
+/**
+* State Classes
+**/
+
+/* hover */
+.nav__btn:hover,
+.nav__link:hover,
+.pane__link:hover {
+	transition: var(--transition-all-1);
+	opacity: var(--opacity-400);
+}
+.selection__card:hover,
+.b-buttons__btn:hover {
+	background-color: var(--clr-red-600);
+	transition: var(--transition-all-2);
+}
+.b-buttons__btn:hover:after {
+	transition: var(--transition-op-1);
+	opacity: var(--opacity-400);
+}
+.selection__card:hover {
+	.selection__cat img,
+	.selection__title {
+		transition: var(--transition-op-1);
+		opacity: 1;
+	}
+}
+.b-buttons__btn:hover {
+	color: rgba(#fff, 0.5);
+}
+.form-area__btn:hover,
+.btn--alt:hover,
+.setting__btn:hover {
+	transition: var(--transition-all-2);
+	background-color: var(--clr-indigo-600);
+	color: rgba(#fff, 0.5);
+}
+.records__item:hover {
+	transition: var(--transition-all-1);
+	background-color: var(--clr-red-400);
+	animation: animateCard 0.4s ease-in-out forwards;
+}
+
+/* click */
+.selection__card:active,
+.b-buttons__btn:active,
+.form-area__btn:active,
+.btn--alt:active,
+.nav__btn,
+.setting__btn:active {
+	box-shadow: unset;
+}

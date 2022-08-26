@@ -1,0 +1,45 @@
+/**
+* Lightbox Styles
+**/
+
+.lightbox[data-hidden='true'] {
+	display: none;
+}
+
+.lightbox[data-hidden='false'] {
+	display: flex;
+}
+
+.lightbox {
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	inset: 0;
+	&__overlay {
+		position: fixed;
+		inset: 0;
+		background-color: rgba(0, 0, 0, 0.65);
+	}
+	&__btns {
+		gap: min(5vw, 1em);
+		flex-wrap: wrap;
+	}
+	.form-area {
+		z-index: 999999 !important;
+		&__container {
+			gap: unset;
+			animation: lightBoxReveal 0.4s ease-in-out forwards;
+		}
+		&__form {
+			block-size: 100%;
+			justify-content: center;
+			gap: 20%;
+		}
+		&__logo {
+			inline-size: min(9rem, 50%);
+		}
+		&__input {
+			inline-size: 100%;
+		}
+	}
+}

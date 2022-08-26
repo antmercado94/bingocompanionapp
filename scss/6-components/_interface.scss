@@ -1,0 +1,65 @@
+/**
+* Game Interface Component Styles
+**/
+
+.b-buttons {
+	gap: 2.5em;
+	font-size: min(var(--res-fs-400), 0.52rem);
+	&__btn {
+		position: relative;
+		font-size: 3em;
+		padding-block: 0.6em;
+		padding-inline: 1em;
+		inline-size: 5.6em;
+		text-transform: uppercase;
+		/* disabled on winMatch */
+		&:disabled {
+			background-color: var(--clr-indigo-600);
+			color: rgba(255, 255, 255, 0.5);
+			box-shadow: unset;
+			&:hover {
+				background-color: var(--clr-indigo-600);
+				&:after {
+					opacity: 0.4;
+				}
+			}
+			&:after {
+				opacity: 0.4;
+			}
+		}
+	}
+	&__btn--icon {
+		transition: var(--transition-all-1);
+	}
+	&__btn--icon::after {
+		content: '';
+		background-image: url('../Assets/svg/number-picker.svg');
+		background-repeat: no-repeat;
+		background-size: 40%;
+		background-position: center;
+		position: absolute;
+		inset: 0;
+	}
+}
+
+@media (min-width: 40rem) {
+	.b-buttons {
+		font-size: min(1vw, 0.5rem);
+		flex-direction: column;
+		&__btn {
+			font-size: 2em;
+			border-radius: 1.563rem;
+			padding-block: 0.9em;
+			padding-inline: 1em;
+			inline-size: 7.5em;
+		}
+		&__btn--icon {
+			block-size: 6.9em;
+		}
+		&__btn--icon::after {
+			background-size: 50%;
+			/** animation */
+			//animation: imgLoad2 0.2s linear forwards;
+		}
+	}
+}

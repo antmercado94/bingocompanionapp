@@ -1,0 +1,52 @@
+/**
+* All Numbers (No Grid) Component Styles
+**/
+
+.game--no-grid {
+	.numbers {
+		position: relative;
+		border-radius: var(--br-200);
+		background-color: var(--clr-no-grid);
+
+		&::before {
+			content: '';
+			background-image: url('../Assets/svg/bingo-logo.svg');
+			background-repeat: no-repeat;
+			background-size: min(18rem, 60%);
+			background-position: center;
+			position: absolute;
+			inset: 0;
+			opacity: var(--opacity-400);
+		}
+		&__list {
+			align-items: flex-end;
+			aspect-ratio: 1/1;
+			block-size: min(24rem, 82vw);
+			min-block-size: 15rem;
+			inline-size: 100%;
+			padding: var(--padding-200);
+			/** server error */
+			.game__error {
+				position: absolute;
+				inset: 0;
+			}
+		}
+	}
+	.numbers__list {
+		.numbers {
+			&__circle {
+				font-size: max(1.8vw, 0.5rem);
+			}
+		}
+	}
+
+	@media (min-width: 40rem) {
+		.numbers__list {
+			.numbers {
+				&__circle {
+					font-size: min(1.5vw, 0.7rem);
+				}
+			}
+		}
+	}
+}

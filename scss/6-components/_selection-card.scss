@@ -1,0 +1,53 @@
+/**
+* Selection Card Styles
+**/
+
+.selection {
+	&__card {
+		position: relative;
+		block-size: min(78vw, 19rem);
+		min-block-size: 15rem;
+		font-size: clamp(1.8rem, 7vw, 2rem);
+		&--animate {
+			/** animation */
+			animation: animateCard2 0.1s ease-in;
+		}
+		&--animate:hover {
+			/** animation */
+			animation: animateCard 0.4s ease-in-out forwards;
+		}
+	}
+	&__cat {
+		inline-size: min(8rem, 50%);
+		justify-content: center;
+		gap: 0.6rem;
+	}
+	&__icon,
+	&__title {
+		opacity: var(--opacity-400);
+	}
+	&__icon--card {
+		inline-size: 2.3rem;
+		transform: matrix(0.98, 0, -0.2, 1, 0, 0);
+	}
+	&__title {
+		text-transform: uppercase;
+		font-size: 1em;
+	}
+	&__link {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+	@media (min-width: 40rem) {
+		&__card {
+			block-size: min(23.813rem, 55vw);
+		}
+		&__cat {
+			inline-size: min(10rem, 45%);
+		}
+		&__icon--card {
+			inline-size: 3rem;
+		}
+	}
+}

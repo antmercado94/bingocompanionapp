@@ -1,0 +1,39 @@
+.loading {
+	font-size: min(2vw, 0.6rem);
+	.circle {
+		background-color: white;
+		opacity: 0.9;
+		font-size: 1em;
+		span {
+			font-size: 3em;
+			text-transform: uppercase;
+		}
+	}
+	#ball-1 {
+		border-color: var(--clr-brown-light);
+		animation: bounce 1.5s infinite;
+	}
+	#ball-2 {
+		border-color: var(--clr-green);
+		animation: bounce 1.5s 0.1s infinite;
+	}
+	#ball-3 {
+		border-color: var(--clr-gray);
+		animation: bounce 1.5s 0.2s infinite;
+	}
+	#ball-4 {
+		border-color: var(--clr-blue);
+		animation: bounce 1.5s 0.3s infinite;
+	}
+
+	@media (max-width: 23.125rem) {
+		font-size: clamp(0.3rem, 2vw, 0.45rem);
+	}
+
+	@media (min-width: 40rem) {
+		font-size: 1rem;
+		.circle {
+			font-size: 0.6em;
+		}
+	}
+}

@@ -1,0 +1,65 @@
+/**
+* Pagination Component Styles
+**/
+
+.pagination {
+	li {
+		margin-inline: 0.4rem;
+	}
+	&__container {
+		display: flex;
+		justify-content: center;
+	}
+	&__circle {
+		display: block;
+		background-color: var(--clr-red-400);
+		inline-size: 10px;
+		block-size: 10px;
+		border-radius: 50%;
+		&:hover {
+			transition: var(--transition-all-1);
+			background-color: var(--clr-red-600);
+		}
+	}
+	&__active .pagination__circle {
+		transition: var(--transition-all-2);
+		background-color: #fad4d4;
+	}
+}
+
+.section__records {
+	.pagination__container {
+		display: flex;
+		position: absolute;
+		inset: 0;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 0;
+		padding: 0.2rem;
+	}
+	.pagination__next:hover,
+	.pagination__previous:hover {
+		transition: var(--transition-all-1);
+		font-size: 1em;
+		color: var(--clr-red-500);
+	}
+	.pagination__disabled {
+		display: none;
+	}
+}
+
+@media (min-width: 23.75rem) {
+	.section__records {
+		.pagination__container {
+			padding: 0.5rem;
+		}
+	}
+}
+
+@media (min-width: 40rem) {
+	.section__records {
+		.pagination__container {
+			padding: min(0.8vw, 0.5rem);
+		}
+	}
+}

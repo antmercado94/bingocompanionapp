@@ -1,0 +1,114 @@
+/**
+* All Numbers (with Grid) Component Styles
+**/
+
+.numbers {
+	font-size: min(2vw, 1.145rem);
+	border-radius: var(--br-600);
+	min-block-size: min(3.329rem, 10vw);
+	padding: 0.3rem;
+	scrollbar-width: none;
+	&--grid {
+		position: relative;
+		overflow: hidden;
+		.numbers__list {
+			position: absolute;
+			flex-direction: row-reverse;
+			left: -7%;
+		}
+		/** animation */
+		.numbers__circles:last-of-type {
+			animation: lastNumReveal 0.5s 0.1s ease-in backwards;
+		}
+		.numbers__circles--animate {
+			transition: transform 1s 0.5s linear;
+			transform: translateX(75%);
+		}
+		.numbers__circles--animated {
+			transform: translateX(75%);
+		}
+		.numbers__circles--animated:last-of-type {
+			animation: none;
+		}
+	}
+	&--no-grid {
+		overflow-x: auto;
+		/* Hide scrollbar for IE, Edge and Firefox */
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		/* Hide scrollbar for Chrome, Safari and Opera */
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		.numbers__list {
+			flex-wrap: wrap;
+			align-content: baseline;
+		}
+		/** animation */
+		.numbers__circles:last-of-type {
+			animation: lastNumRevealNG 0.4s 0.3s ease-in backwards;
+		}
+		.numbers__circles--animated:last-of-type {
+			animation: none;
+		}
+	}
+	&__circle {
+		font-size: min(var(--res-fs-400), 0.6rem);
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		inline-size: min(10vw, 4em);
+		block-size: min(10vw, 4em);
+		border-radius: 50%;
+		border: 0.7em solid;
+		margin-inline-end: -1.063em;
+		padding: 1.6em;
+	}
+	&__circle--b {
+		border-color: var(--clr-blue);
+	}
+	&__circle--i {
+		border-color: var(--clr-indigo-400);
+	}
+	&__circle--n {
+		border-color: var(--clr-gray);
+	}
+	&__circle--g {
+		border-color: var(--clr-green);
+	}
+	&__circle--o {
+		border-color: var(--clr-brown-light);
+	}
+	&__letter {
+		position: relative;
+		text-transform: uppercase;
+		inset-block-start: 0.3em;
+		font-size: 0.7em;
+	}
+	&__num {
+		position: relative;
+		inset-block-end: 0.188em;
+		font-size: 1.7em;
+	}
+	&__current {
+		font-size: min(3.5vw, 1.6rem);
+		margin-inline-end: unset;
+		position: relative;
+	}
+	&__current--animate {
+		animation: currentNumReveal 0.3s ease-in forwards;
+	}
+	@media (min-width: 40rem) {
+		&--grid {
+			min-block-size: 3.329rem;
+		}
+	}
+	@media (max-width: 26.125rem) {
+		&--grid {
+			block-size: min(2.6rem, 12vw);
+			min-block-size: 1.9rem;
+		}
+	}
+}

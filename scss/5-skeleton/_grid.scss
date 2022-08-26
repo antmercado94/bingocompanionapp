@@ -1,0 +1,16 @@
+/**
+* Grid Styles
+**/
+
+.grid {
+	display: grid;
+}
+
+.grid--top {
+	grid-template-rows: auto 10fr;
+}
+
+.grid--main {
+	align-self: center;
+	justify-self: center;
+}

@@ -1,0 +1,71 @@
+/**
+* Game Records Component Styles
+**/
+
+.records {
+	&__list {
+		grid-template-columns: repeat(4, 1fr);
+		justify-items: stretch;
+		gap: 0.5rem;
+		max-inline-size: 14em;
+		margin-inline: auto;
+		block-size: min(37vw, 12em);
+		min-block-size: 11.5em;
+		padding: 1rem;
+	}
+	/** animation */
+	&__list--animate {
+		animation: contentLoad 0.2s linear backwards;
+	}
+	&__item {
+		block-size: min(9vw, 3em);
+		min-block-size: 2.5rem;
+		aspect-ratio: 1 / 1;
+		flex-direction: column;
+		border-radius: 5.43078px;
+		z-index: 1;
+	}
+	&__date {
+		font-size: 0.563em;
+	}
+	&__type {
+		display: inherit;
+		animation: contentLoad 0.1s linear forwards;
+	}
+	&__icon {
+		opacity: var(--opacity-400);
+		inline-size: min(5vw, 1.5em);
+		min-inline-size: 1rem;
+	}
+	&__icon--card {
+		inline-size: min(1.8vw, 1.8em);
+		min-inline-size: 0.5rem;
+		transform: matrix(0.98, 0, -0.2, 1, 0, 0);
+		margin-inline-start: 4px;
+	}
+	@media (max-width: 21.875rem) {
+		&__list {
+			gap: 0.2rem;
+		}
+		&__item {
+			min-block-size: 2.35rem;
+		}
+	}
+	@media (min-width: 40rem) {
+		&__list {
+			grid-template-columns: repeat(3, 1fr);
+			height: auto;
+			min-block-size: min(40vw, 18em);
+			padding: min(3vw, 1.4rem);
+		}
+		&__item {
+			height: auto;
+		}
+		&__icon {
+			inline-size: min(3vw, 1.5em);
+		}
+		&__icon--card {
+			inline-size: min(1.4vw, 0.6em);
+		}
+	}
+}

@@ -1,0 +1,73 @@
+/**
+* Switch Component Styles
+**/
+
+.switch {
+	position: relative;
+	inline-size: 4.997rem;
+	block-size: 2.025rem;
+}
+.switch input[type='checkbox'] {
+	inline-size: 0;
+	block-size: 0;
+	opacity: 0;
+}
+.slider {
+	cursor: pointer;
+	position: absolute;
+	inset: 0;
+	padding: 3px;
+	border-radius: 1.438rem;
+	background-color: var(--clr-black);
+	transition: 0.4s;
+}
+.slider:before {
+	position: absolute;
+	content: '';
+	background-color: var(--clr-white);
+	inline-size: 25px;
+	block-size: 25px;
+	border-radius: 50%;
+	background-image: url('/Assets/svg/sun.svg');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.4s;
+}
+input:checked + .slider {
+	background-color: var(--clr-indigo-400);
+}
+input:checked + .slider:before {
+	transform: translateX(49px);
+	background-image: url('/Assets/svg/moon.svg');
+}
+
+@media (max-width: 23.125rem) {
+	.switch {
+		inline-size: 3.75rem;
+		block-size: 1.544rem;
+	}
+	.slider:before {
+		inline-size: 19px;
+		block-size: 19px;
+		background-size: 16px 16px;
+	}
+	input:checked + .slider:before {
+		transform: translateX(35px);
+	}
+}
+
+@media (min-width: 40rem) {
+	.switch {
+		inline-size: 6.063rem;
+		block-size: 2.625rem;
+	}
+	.slider:before {
+		inline-size: 35px;
+		block-size: 35px;
+		background-size: 28px 28px;
+	}
+	input:checked + .slider:before {
+		transform: translateX(56px);
+	}
+}

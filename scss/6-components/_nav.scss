@@ -1,0 +1,55 @@
+/**
+* Nav Component Styles
+**/
+
+.nav {
+	background-color: rgba(91, 30, 30, 0.5);
+	border-radius: 0 0 var(--br-300) var(--br-300);
+	&__links {
+		min-block-size: 4em;
+	}
+	&__btn {
+		font-size: var(--fs-200);
+	}
+	&__link {
+		font-size: var(--fs-100);
+		font-weight: var(--fw-primary-black);
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: var(--spacing-xxs);
+	}
+	&__icon {
+		block-size: min(2rem);
+	}
+	.skeleton {
+		width: 25px;
+		height: 25px;
+		border-radius: 50px;
+	}
+}
+
+@media (min-width: 40rem) {
+	.nav {
+		background-color: var(--clr-nav);
+		&__links {
+			min-block-size: 4.5em;
+		}
+		&__btn {
+			font-size: var(--fs-400);
+		}
+		&__link {
+			font-size: var(--fs-400);
+			font-weight: var(--fw-primary-regular);
+		}
+		&__icon {
+			display: none;
+		}
+	}
+}
+@media (max-width: 23.125rem) {
+	.nav {
+		&__btn {
+			font-size: var(--fs-100);
+		}
+	}
+}

@@ -1,0 +1,20 @@
+/**
+* Button Element Styles
+**/
+
+.btn {
+	border-radius: var(--br-400);
+	&--tp-light {
+		background-color: rgba(255, 255, 255, var(--opacity-600));
+	}
+}
+
+.btn--interface {
+	border-radius: var(--br-200);
+}
+
+.btn--alt {
+	text-transform: uppercase;
+	padding: 1em 2.2em;
+	inline-size: max-content;
+}
