@@ -5,7 +5,11 @@ import logoIMG from '../Assets/svg/bingo-logo.svg';
 import Loading from './Interface/Loading';
 
 const BingoGrid = () => {
-	const { data } = useFetch('/api/cells');
+	const { data } = useFetch(
+		process.env.NODE_ENV !== 'production'
+			? '/api/cells'
+			: `${process.env.API_URL}/cells`
+	);
 	const {
 		calledNumbers,
 		setMatching,

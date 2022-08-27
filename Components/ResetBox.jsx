@@ -33,7 +33,10 @@ const ResetBox = (props) => {
 
 		/* req info */
 		const options = {
-			endpoint: `/api/resetpw_post`,
+			endpoint:
+				process.env.NODE_ENV !== 'production'
+					? '/api/resetpw_post'
+					: `${process.env.API_URL}/resetpw_post`,
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			data: JSON.stringify({ email }),

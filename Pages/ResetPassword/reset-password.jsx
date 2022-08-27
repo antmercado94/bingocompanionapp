@@ -20,7 +20,11 @@ const ResetPassword = (props) => {
 	const [isImageLoaded, setIsImageLoaded] = useState(false);
 
 	/* fetch param auth check */
-	const { isPending, error: err } = useFetch(`/api/resetpw/${id}/${token}`);
+	const { isPending, error: err } = useFetch(
+		process.env.NODE_ENV !== 'production'
+			? `/api/resetpw/${id}/${token}`
+			: `${process.env.API_URL}/resetpw/${id}/${token}`
+	);
 
 	/* auth check */
 	useEffect(() => {
@@ -43,7 +47,10 @@ const ResetPassword = (props) => {
 		const user = { password, repeatPassword };
 		/** req info */
 		const options = {
-			endpoint: `/api/pw_reset/${id}/${token}`,
+			endpoint:
+				process.env.NODE_ENV !== 'production'
+					? `/api/pw_reset/${id}/${token}`
+					: `${process.env.API_URL}/pw_reset/${id}/${token}`,
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			data: JSON.stringify(user),

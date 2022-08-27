@@ -21,7 +21,11 @@ import Loading from '../../Components/Interface/Loading';
 
 const MyAccount = (props) => {
 	const { dispatch } = props;
-	const { data, isPending, error } = useFetch('/api/get_user');
+	const { data, isPending, error } = useFetch(
+		process.env.NODE_ENV !== 'production'
+			? '/api/get_user'
+			: `${process.env.API_URL}/get_user`
+	);
 	const [userData, setUserData] = useState({
 		overView: null,
 		records: null,

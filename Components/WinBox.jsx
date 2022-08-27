@@ -58,7 +58,10 @@ const WinBox = () => {
 		if (isWinner) {
 			/* req info */
 			const putOptions = {
-				endpoint: '/api/complete',
+				endpoint:
+					process.env.NODE_ENV !== 'production'
+						? '/api/complete'
+						: `${process.env.API_URL}/complete`,
 				method: 'PUT',
 			};
 			/** focus input */
@@ -102,7 +105,10 @@ const WinBox = () => {
 		};
 		/** req info */
 		const options = {
-			endpoint: '/api/save',
+			endpoint:
+				process.env.NODE_ENV !== 'production'
+					? '/api/save'
+					: `${process.env.API_URL}/save`,
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			data: JSON.stringify(record),

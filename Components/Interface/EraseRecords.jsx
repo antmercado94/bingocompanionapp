@@ -9,7 +9,10 @@ const EraseRecords = (props) => {
 
 	/* req info */
 	const options = {
-		endpoint: '/api/erase_records',
+		endpoint:
+			process.env.NODE_ENV !== 'production'
+				? '/api/erase_records'
+				: `${process.env.API_URL}/erase_records`,
 		method: 'DELETE',
 	};
 

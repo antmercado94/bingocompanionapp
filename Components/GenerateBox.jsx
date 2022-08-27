@@ -22,7 +22,10 @@ const GenerateBox = () => {
 
 		/** req info */
 		const options = {
-			endpoint: `/api/generate`,
+			endpoint:
+				process.env.NODE_ENV !== 'production'
+					? '/api/generate'
+					: `${process.env.API_URL}/generate`,
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			data: JSON.stringify({ quantity }),

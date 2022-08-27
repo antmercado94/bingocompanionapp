@@ -1,6 +1,6 @@
 {
 	"/api": {
-		"target": "https://bingocompanionapp.herokuapp.com/",
+		"target": "http://localhost:5000/",
 		"pathRewrite": {
 			"^/api": ""
 		}

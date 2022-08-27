@@ -17,7 +17,11 @@ const GameContextProvider = (props) => {
 	const columns = ['b', 'i', 'n', 'g', 'o'];
 
 	/* game api */
-	const { data, isPending, error } = useFetch('/api/numbers');
+	const { data, error } = useFetch(
+		process.env.NODE_ENV !== 'production'
+			? '/api/numbers'
+			: `${process.env.API_URL}/numbers`
+	);
 	const [callableNumbers, setCallableNumbers] = useState(null);
 	/* current game status */
 	const { isPaused, isWin } = state.gameStatus;

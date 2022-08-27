@@ -74,7 +74,10 @@ const MyConfig = (props) => {
 
 		/** req info */
 		const options = {
-			endpoint: '/api/update-user',
+			endpoint:
+				process.env.NODE_ENV !== 'production'
+					? '/api/update-user'
+					: `${process.env.API_URL}/update-user`,
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			data: JSON.stringify(newData),

@@ -19,7 +19,6 @@ export async function post(options) {
 		});
 		/** 500 error handling */
 		if (result.status === 504 || result.status === 500)
-			// Note: handle other server errors later (check if 504 might be docker/parsec related)
 			throw Error('Server error: could not send data.');
 
 		return await result.json();
@@ -44,7 +43,13 @@ export async function put(options) {
 
 /* get req delete jwt */
 export async function logout() {
-	const result = await (await fetch('/api/logout')).json();
+	const result = await (
+		await fetch(
+			process.env.NODE_ENV !== 'production'
+				? '/api/logout'
+				: `${process.env.API_URL}/logout`
+		)
+	).json();
 
-	return result.isCleared; // bool, check err?????
+	return result.isCleared;
 }
