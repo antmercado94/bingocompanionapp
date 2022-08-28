@@ -46,7 +46,8 @@ const PrivacyPolicy = () => {
 								<p>
 									<strong>Company</strong> (referred to as either &quot;the
 									Company&quot;, &quot;We&quot;, &quot;Us&quot; or
-									&quot;Our&quot; in this Agreement) refers to Bingo Companion.
+									&quot;Our&quot; in this Agreement) refers to Bingo Companion
+									App.
 								</p>
 							</li>
 							<li>
@@ -100,14 +101,20 @@ const PrivacyPolicy = () => {
 							</li>
 							<li>
 								<p>
-									<strong>Website</strong> refers to Bingo Companion, accessible
-									from{' '}
+									<strong>Website</strong> refers to Bingo Companion App,
+									accessible from{' '}
 									<a
-										href='http://bingocompanionapp.com'
+										href={
+											process.env.NODE_ENV !== 'production'
+												? `http://${location.host}`
+												: `https://${location.host}`
+										}
 										rel='external nofollow noopener'
 										target='_blank'
 									>
-										http://bingocompanionapp.com
+										{process.env.NODE_ENV !== 'production'
+											? `${location.host}`
+											: `${location.host}`}
 									</a>
 								</p>
 							</li>
