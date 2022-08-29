@@ -43,13 +43,7 @@ export async function put(options) {
 
 /* get req delete jwt */
 export async function logout() {
-	const result = await (
-		await fetch(
-			process.env.NODE_ENV !== 'production'
-				? '/api/logout'
-				: `${process.env.API_URL}/logout`
-		)
-	).json();
+	const result = await (await fetch('/api/logout')).json();
 
 	return result.isCleared;
 }

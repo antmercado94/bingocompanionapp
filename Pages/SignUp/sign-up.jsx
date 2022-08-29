@@ -24,10 +24,7 @@ const SignUp = (props) => {
 		const user = { name, email, password };
 		/** req info */
 		const options = {
-			endpoint:
-				process.env.NODE_ENV !== 'production'
-					? '/api/signup'
-					: `${process.env.API_URL}/signup`,
+			endpoint: '/api/signup',
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			data: JSON.stringify(user),

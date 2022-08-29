@@ -12,10 +12,7 @@ const DeleteAccount = (props) => {
 		const btn = document.getElementById('btnDelete');
 		/* req info */
 		const options = {
-			endpoint:
-				process.env.NODE_ENV !== 'production'
-					? '/api/delete_user'
-					: `${process.env.API_URL}/delete_user`,
+			endpoint: '/api/delete_user',
 			method: 'DELETE',
 		};
 

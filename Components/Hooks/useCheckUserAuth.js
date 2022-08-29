@@ -10,11 +10,7 @@ export default function useCheckUserAuth() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		fetch(
-			process.env.NODE_ENV !== 'production'
-				? '/api/check_user'
-				: `${process.env.API_URL}/check_user`
-		)
+		fetch('/api/check_user')
 			.then((res) => {
 				if (!res.ok) {
 					throw Error('An error has occurred, could not fetch data.');
