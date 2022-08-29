@@ -16,15 +16,16 @@ describe('bingo game with grid', () => {
 		});
 	});
 	it('should disable button when there are no more numbers to call', () => {
+		let maxNumbers = 75;
 		cy.apiGetNonPlayableCells(); // enures no winning matches will occur
 		cy.apiGetNumbers(true);
 		cy.visit('/game/grid');
 		cy.wait(800);
-		/** click through all possible numbers (100)*/
-		for (let n = 0; n < 100; n++) {
+		/** click through all possible numbers */
+		for (let n = 0; n < maxNumbers; n++) {
 			cy.get('.b-buttons__btn--icon').click();
 		}
-		cy.get('.numbers__list>li').should('have.length', 100);
+		cy.get('.numbers__list>li').should('have.length', maxNumbers);
 		cy.get('.b-buttons__btn--icon').should('be.disabled');
 	});
 	it('displays winBox component when bingo button is clicked and confirmed', () => {

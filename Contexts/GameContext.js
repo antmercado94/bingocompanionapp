@@ -45,7 +45,7 @@ const GameContextProvider = (props) => {
 
 	useEffect(() => {
 		if (isPaused || isWin) return;
-		/** 5 arrays (emulating columns) containing numbers (1-20) */
+		/** 5 arrays (emulating columns) containing callable numbers */
 		data && setCallableNumbers(data.numbers);
 	}, [data]);
 

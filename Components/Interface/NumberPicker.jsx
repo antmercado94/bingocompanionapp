@@ -9,6 +9,7 @@ const NumberPicker = () => {
 		setCallableNumbers,
 		isWinner,
 	} = useContext(GameContext);
+	let maxNumbers = 75; // 75-Ball Bingo
 
 	useEffect(() => {
 		if (calledNumbers.length > 0) {
@@ -82,7 +83,9 @@ const NumberPicker = () => {
 			onClick={handleClick}
 			className='b-buttons__btn b-buttons__btn--icon btn--interface bg-red-400 bs-300'
 			disabled={
-				calledNumbers.length < 100 && callableNumbers !== null ? '' : 'disabled'
+				calledNumbers.length < maxNumbers && callableNumbers !== null
+					? ''
+					: 'disabled'
 			}
 		></button>
 	);
