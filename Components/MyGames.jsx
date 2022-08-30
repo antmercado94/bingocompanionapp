@@ -88,13 +88,18 @@ const MyGames = (props) => {
 						nextLinkClassName={'pagination__next'}
 						disabledClassName={'pagination__disabled'}
 						activeClassName={'pagination__active'}
+						forcePage={pageNumber}
 					/>
 				</section>
 			</div>
 			<div className='section__half'>
 				<section className='section__records records section__container flex'>
 					{records && (
-						<GameRecords records={records} setGameData={setGameData} />
+						<GameRecords
+							records={records}
+							setGameData={setGameData}
+							setPageNumber={setPageNumber}
+						/>
 					)}
 				</section>
 			</div>

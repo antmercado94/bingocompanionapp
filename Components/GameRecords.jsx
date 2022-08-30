@@ -5,7 +5,7 @@ import pickerSVG from '../Assets/svg/number-picker.svg';
 
 const GameRecords = (props) => {
 	const games = props.records.games;
-	const setGameData = props.setGameData;
+	const { setGameData, setPageNumber: setCalledPageNumber } = props;
 	const [pageNumber, setPageNumber] = useState(0);
 	const [activeRecord, setActiveRecord] = useState();
 
@@ -22,7 +22,7 @@ const GameRecords = (props) => {
 	};
 
 	/* show game details */
-	const handleMouseEnter = (game, target) => {
+	const revealDetails = (game, target, isTouch) => {
 		const dateObj = new Date(game.dateSaved);
 		const localeDate =
 			dateObj.toLocaleDateString() +
@@ -34,19 +34,46 @@ const GameRecords = (props) => {
 			calledNumbers: game.calledNumbers,
 		});
 
-		if (target.nodeName === 'LI') {
-			if (target !== activeRecord) {
-				/** add/reset animation classes */
-				const userDataEls = document.querySelectorAll('.user-data');
-				userDataEls.forEach((el) => {
-					let sectionClass = el.classList[0];
-					let animateClass = sectionClass + '--animate';
-					el.classList.remove(animateClass);
-					void el.offsetWidth;
-					el.classList.add(animateClass);
-				});
+		/** hover */
+		if (!isTouch) {
+			if (target.nodeName === 'LI') {
+				if (target !== activeRecord) {
+					/** add/reset animation classes */
+					const userDataEls = document.querySelectorAll('.user-data');
+					userDataEls.forEach((el) => {
+						let sectionClass = el.classList[0];
+						let animateClass = sectionClass + '--animate';
+						el.classList.remove(animateClass);
+						void el.offsetWidth;
+						el.classList.add(animateClass);
+					});
+					/** reset pagination of called numbers */
+					setCalledPageNumber(0);
+				}
+				setActiveRecord(target);
 			}
-			setActiveRecord(target);
+		} else {
+			/** mobile touch event */
+			if (
+				target.nodeName === 'LI' ||
+				target.nodeName === 'SPAN' ||
+				target.nodeName === 'IMG'
+			) {
+				if (target.closest('li') !== activeRecord) {
+					/** add/reset animation classes */
+					const userDataEls = document.querySelectorAll('.user-data');
+					userDataEls.forEach((el) => {
+						let sectionClass = el.classList[0];
+						let animateClass = sectionClass + '--animate';
+						el.classList.remove(animateClass);
+						void el.offsetWidth;
+						el.classList.add(animateClass);
+					});
+					/** reset pagination of called numbers */
+					setCalledPageNumber(0);
+				}
+				setActiveRecord(target.closest('li'));
+			}
 		}
 	};
 
@@ -86,8 +113,8 @@ const GameRecords = (props) => {
 		.slice(pagesVisited, pagesVisited + recordsPerPage)
 		.map((game) => (
 			<li
-				onMouseOver={(e) => handleMouseEnter(game, e.target)}
-				onTouchStart={(e) => handleMouseEnter(game, e.target)}
+				onMouseOver={(e) => revealDetails(game, e.target, false)}
+				onTouchStart={(e) => revealDetails(game, e.target, true)}
 				className='records__item txt-white bg-indigo-400 bs-400 flex--center'
 				key={game._id}
 			>
