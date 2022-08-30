@@ -31,6 +31,22 @@ const WinBox = () => {
 
 	const [name, setName] = useState('');
 
+	/* req info */
+	const putOptions = {
+		endpoint: '/api/complete',
+		method: 'PUT',
+	};
+	useEffect(() => {
+		/** update completed games count after returning from login or signup */
+		if (isUser) {
+			if (isUpdatePending === true) {
+				/** fetch PUT req */
+				put(putOptions);
+				dispatch({ type: 'SET_GAMECOMPLETE', isUpdatePending: false });
+			}
+		}
+	}, [isUser]);
+
 	/* add game data to local storage and update completed games count */
 	useEffect(() => {
 		if (!isImageLoaded) return;
@@ -56,11 +72,6 @@ const WinBox = () => {
 			navigate('/');
 		}
 		if (isWinner) {
-			/* req info */
-			const putOptions = {
-				endpoint: '/api/complete',
-				method: 'PUT',
-			};
 			/** focus input */
 			input.focus();
 			/** update completed games count */
@@ -68,14 +79,6 @@ const WinBox = () => {
 				/** fetch PUT req */
 				put(putOptions);
 				dispatch({ type: 'SET_GAMECOMPLETE', isUpdatePending: false });
-			}
-			/** update completed games count after returning from login or signup */
-			if (isUpdatePending) {
-				if (isUser === true) {
-					/** fetch PUT req */
-					put(putOptions);
-					dispatch({ type: 'SET_GAMECOMPLETE', isUpdatePending: false });
-				}
 			}
 			/** store game temporarily */
 			localStorage.setItem('winGame', JSON.stringify(currentGame));
