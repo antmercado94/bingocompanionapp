@@ -174,6 +174,7 @@ const WinBox = () => {
 					gameType: null,
 				});
 				localStorage.removeItem('winGame');
+				dispatch({ type: 'SET_GAMECOMPLETE', isUpdatePending: false });
 				navigate('/');
 			} else {
 				return;
@@ -187,6 +188,7 @@ const WinBox = () => {
 				gameType: null,
 			});
 			localStorage.removeItem('winGame');
+			dispatch({ type: 'SET_GAMECOMPLETE', isUpdatePending: false });
 			navigate('/');
 		}
 	};

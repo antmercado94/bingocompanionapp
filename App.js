@@ -55,6 +55,10 @@ function App() {
 				isSaved: false,
 				gameType,
 			});
+			/** keep completed games update status pending if not signed in */
+			if (!isUser) {
+				dispatch({ type: 'SET_GAMECOMPLETE', isUpdatePending: true });
+			}
 		}
 	}, []);
 
