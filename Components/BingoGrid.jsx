@@ -83,8 +83,8 @@ const BingoGrid = () => {
 				{isReady
 					? bingoGrid.map((cell, index) => (
 							<li
-								className={`b-grid__nbr ${
-									!cell.match ? '' : `b-grid__match ${animateClass}`
+								className={`b-grid__nbr${
+									!cell.match ? '' : ` b-grid__match ${animateClass}`
 								} flex--center`}
 								key={index}
 							>

@@ -13,6 +13,7 @@ const WinMatch = () => {
 	const rowMatches = [],
 		columnMatches = [],
 		diagonalMatches = [];
+
 	/* sort values in 'matching' into rows, columns, and diagonal matches */
 	useEffect(() => {
 		if (matching.length > 0) {
@@ -124,13 +125,7 @@ const WinMatch = () => {
 				let matchIndexVals = matchingRowCells[i].values;
 				matchIndexVals.forEach((matchIndex) => {
 					if (!isWinner) {
-						cells[matchIndex].classList.add(
-							'b-grid__winMatch',
-							'b-grid__winMatch--animate'
-						);
-					} else {
-						/** don't add animate class if win state is already active */
-						cells[matchIndex].classList.add('b-grid__winMatch');
+						cells[matchIndex].classList.add('b-grid__winMatch--animate');
 					}
 				});
 				/** disable game btns */
@@ -148,13 +143,7 @@ const WinMatch = () => {
 				let matchIndexVals = matchingColCells[i].values;
 				matchIndexVals.forEach((matchIndex) => {
 					if (!isWinner) {
-						cells[matchIndex].classList.add(
-							'b-grid__winMatch',
-							'b-grid__winMatch--animate'
-						);
-					} else {
-						/** don't add animate class if win state is already active */
-						cells[matchIndex].classList.add('b-grid__winMatch');
+						cells[matchIndex].classList.add('b-grid__winMatch--animate');
 					}
 				});
 				/** disable game btns */
@@ -172,13 +161,7 @@ const WinMatch = () => {
 				let matchIndexVals = matchingDiagCells[i].values;
 				matchIndexVals.forEach((matchIndex) => {
 					if (!isWinner) {
-						cells[matchIndex].classList.add(
-							'b-grid__winMatch',
-							'b-grid__winMatch--animate'
-						);
-					} else {
-						/** don't add animate class if win state is already active */
-						cells[matchIndex].classList.add('b-grid__winMatch');
+						cells[matchIndex].classList.add('b-grid__winMatch--animate');
 					}
 				});
 				/** disable game btns */
@@ -191,7 +174,7 @@ const WinMatch = () => {
 		}
 	}, [winConditions]);
 
-	return <WinBox />;
+	return <WinBox winConditions={winConditions} />;
 };
 
 export default WinMatch;
