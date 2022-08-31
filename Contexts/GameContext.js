@@ -9,7 +9,9 @@ export const GameContext = createContext();
 
 const GameContextProvider = (props) => {
 	const { state, dispatch } = props;
-	const currentGameType = props.children.type.name;
+	const currentGameType = props.children.type.name.includes('BingoWithGrid')
+		? 'BingoWithGrid'
+		: 'BingoNoGrid';
 	const [calledNumbers, setCalledNumbers] = useState([]);
 	const [matching, setMatching] = useState([]);
 	const [isWinner, setIsWinner] = useState(false);
