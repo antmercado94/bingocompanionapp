@@ -154,9 +154,9 @@ The URL that points Cypress towards visiting is set to the root of `localhost:30
 
 ```js
 module.exports = {
-e2e: {
-  baseUrl: 'http://localhost:3000/',
-},
+  e2e: {
+    baseUrl: 'http://localhost:3000/',
+  },
 };
 ```
 
