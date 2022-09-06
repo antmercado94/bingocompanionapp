@@ -5,7 +5,9 @@
 	"scripts": {
 		"dev": "npx parcel index.html -p 3000 --open",
 		"build": "npx parcel build index.html",
-		"start": "npm run build"
+		"start": "npm run build",
+		"cypress:open": "cypress open",
+		"cy:run": "cypress run --spec cypress/e2e/!(all.cy.js)"
 	},
 	"keywords": [],
 	"author": "",
