@@ -150,7 +150,7 @@ Run Cypress in CLI:
 npm run cy:run
 ```
 
-The URL that points Cypress towards visiting is set to the root of `localhost:3000` but can be changed by editing the `baseUrl` value within [cypress.config.js](https://github.com/antmercado94/bingocompanionapp/blob/main/cypress.config.js).
+The URL that points Cypress towards visiting is set to the root of `localhost:3000` but can be changed by editing the `baseUrl` value within [cypress.config.js](https://github.com/antmercado94/bingocompanionapp/blob/main/cypress.config.js)
 
 ```js
 module.exports = {
