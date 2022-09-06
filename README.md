@@ -136,7 +136,7 @@ Records can be completely erased from a user's account by accessing the _setting
 
 ## **Tests**
 
-End-to-end testing of the application was done using [Cypress](https://www.cypress.io/) and can be ran via the Cypress GUI or CLI
+End-to-end testing of the application was done using [Cypress](https://www.cypress.io/) and can be ran via the Cypress GUI or CLI.
 
 Open Cypress testing GUI:
 
