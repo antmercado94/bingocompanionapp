@@ -90,7 +90,7 @@ Be aware that because game data is temporarily saved to local storage when pause
 
 ![Image Example with link](/Assets/screenshots/paused.png)
 
-<figcaption align = "center"><small>Paused Grid game</small></figcaption>
+<p align="center"><small>Paused Grid game.</small></p>
 </figure>
 
 ### **Winning**
@@ -103,7 +103,7 @@ The same winning functionality happens automatically if a match of five (across/
 
 ![Image Example with link](/Assets/screenshots/winner.png)
 
-<figcaption align = "center"><small>A winner is decided.</small></figcaption>
+<p align="center"><small>A winner is decided.</small></p>
 </figure>
 
 ### **Bingo Card Generator**
@@ -116,7 +116,7 @@ Specify the amount of cards to generate within the number input field (maximum o
 
 ![Image Example with link](/Assets/screenshots/generate.png)
 
-<figcaption align = "center"><small>Generating PDF bingo cards.</small></figcaption>
+<p align="center"><small>Generating PDF bingo cards.</small></p>
 </figure>
 
 ### **Saved Game Records**
@@ -131,7 +131,7 @@ Records can be completely erased from a user's account by accessing the _setting
 
 ![Image Example with link](/Assets/screenshots/records.png)
 
-<figcaption align = "center"><small>Viewing saved game records.</small></figcaption>
+<p align="center"><small>Viewing saved game records.</small></p>
 </figure>
 
 ## **Tests**
@@ -154,9 +154,9 @@ The URL that points Cypress towards visiting is set to the root of `localhost:30
 
 ```js
 module.exports = {
-  e2e: {
-    baseUrl: 'http://localhost:3000/',
-  },
+	e2e: {
+		baseUrl: 'http://localhost:3000/',
+	},
 };
 ```
 
